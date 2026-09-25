@@ -22,6 +22,9 @@ public partial class VrcViewModel : ViewModelBase
     [ObservableProperty]
     private bool _vrcftDetected;
 
+    /// <summary>False when the user hid eye tracking in the app settings.</summary>
+    public bool ShowEyeTracking { get; }
+
     public ObservableCollection<string> ModuleModeOptions { get; } = [
         Resources.Firmware_Mode_Both,
         Resources.Firmware_Mode_Face,
@@ -62,6 +65,7 @@ public partial class VrcViewModel : ViewModelBase
 
     public VrcViewModel(ILocalSettingsService localSettingsService)
     {
+        ShowEyeTracking = !localSettingsService.ReadSetting("AppSettings_HideEyeTracking", false);
         VrcftDetected = TryGetModuleConfig(out var config);
         if (VrcftDetected && config is not null)
         {

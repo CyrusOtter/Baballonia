@@ -39,7 +39,9 @@ public partial class HomePageView : ViewBase
 
                 var camerasGrid = this.FindControl<Grid>("CameraControlsGrid");
                 var eyesGrid = this.FindControl<Grid>("EyesGrid");
-                var isVertical = window.ClientSize.Width < Utils.MobileWidth;
+                var showEyes = (DataContext as HomePageViewModel)?.ShowEyeTracking ?? true;
+                // With the eye panels hidden, stack the collapsed eye grid above the face panel so the face panel gets the full width.
+                var isVertical = window.ClientSize.Width < Utils.MobileWidth || !showEyes;
 
                 // Clear existing row/column definitions
                 camerasGrid!.RowDefinitions.Clear();

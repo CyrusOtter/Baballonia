@@ -22,6 +22,9 @@ public partial class CalibrationViewModel : ViewModelBase, IDisposable
     public ObservableCollection<SliderBindableSetting> NoseSettings { get; set; }
     public ObservableCollection<SliderBindableSetting> CheekSettings { get; set; }
 
+    /// <summary>False when the user hid eye tracking in the app settings.</summary>
+    public bool ShowEyeTracking { get; }
+
     private ILocalSettingsService _settingsService { get; }
     private readonly ICalibrationService _calibrationService;
     private readonly ParameterSenderService _parameterSenderService;
@@ -34,6 +37,7 @@ public partial class CalibrationViewModel : ViewModelBase, IDisposable
     {
         _eyePipelineManager = eyePipelineManager;
         _settingsService = Ioc.Default.GetService<ILocalSettingsService>()!;
+        ShowEyeTracking = !_settingsService.ReadSetting("AppSettings_HideEyeTracking", false);
         _calibrationService = Ioc.Default.GetService<ICalibrationService>()!;
         _parameterSenderService = Ioc.Default.GetService<ParameterSenderService>()!;
         _processingLoopService = Ioc.Default.GetService<ProcessingLoopService>()!;

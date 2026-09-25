@@ -388,6 +388,8 @@ public partial class HomePageViewModel : ViewModelBase, IDisposable
     public bool IsRunningAsAdmin => Utils.HasAdmin;
 
     [ObservableProperty] private bool _isInitialized = false;
+    [ObservableProperty] private bool _showEyeTracking = true;
+    [ObservableProperty] private bool _showEyeTrackingTools = Utils.IsSupportedDesktopOS;
     [ObservableProperty] private CameraControllerModel _leftCamera;
     [ObservableProperty] private CameraControllerModel _rightCamera;
     [ObservableProperty] private CameraControllerModel _faceCamera;
@@ -444,6 +446,9 @@ public partial class HomePageViewModel : ViewModelBase, IDisposable
         {
             _dropOverlayService.Show();
         }
+
+        ShowEyeTracking = !_localSettings.ReadSetting("AppSettings_HideEyeTracking", false);
+        ShowEyeTrackingTools = ShowEyeTracking && Utils.IsSupportedDesktopOS;
 
         var cameras = _deviceEnumerator.UpdateCameras();
         var cameraNames = cameras.Keys.ToArray();
@@ -518,6 +523,8 @@ public partial class HomePageViewModel : ViewModelBase, IDisposable
     {
         if (!FaceCamera.IsCameraRunning && FaceCamera.ShouldAutostart)
             await StartCameraWithMaximization(FaceCamera, startMaximized: false);
+
+        if (!ShowEyeTracking) return; // eye tracking is hidden in the settings: never start the eye cameras on our own
 
         if (!LeftCamera.IsCameraRunning && LeftCamera.ShouldAutostart)
             await StartCameraWithMaximization(LeftCamera, startMaximized: false);

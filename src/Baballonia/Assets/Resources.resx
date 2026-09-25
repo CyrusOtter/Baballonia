@@ -904,4 +904,10 @@ This is usually easy to fix! Just install the “Tracking Loss Fix” firmware b
   <data name="Tray_Exit" xml:space="preserve">
       <value>Exit</value>
   </data>
+  <data name="Settings_HideEyeTracking_Header" xml:space="preserve">
+    <value>Hide eye tracking options</value>
+  </data>
+  <data name="Settings_HideEyeTracking_Description" xml:space="preserve">
+    <value>Hide the eye cameras, eye calibration and other eye tracking settings. Useful when your headset does its own eye tracking</value>
+  </data>
 </root>

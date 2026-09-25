@@ -2406,5 +2406,23 @@ namespace Baballonia.Assets {
                 return ResourceManager.GetString("VRC_UseNativeEyeTracking_Header", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide eye tracking options.
+        /// </summary>
+        public static string Settings_HideEyeTracking_Header {
+            get {
+                return ResourceManager.GetString("Settings_HideEyeTracking_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide the eye cameras, eye calibration and other eye tracking settings. Useful when your headset does its own eye tracking.
+        /// </summary>
+        public static string Settings_HideEyeTracking_Description {
+            get {
+                return ResourceManager.GetString("Settings_HideEyeTracking_Description", resourceCulture);
+            }
+        }
     }
 }

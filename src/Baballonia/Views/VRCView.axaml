@@ -13,6 +13,7 @@
             <TextBlock Classes="Header" Text="{x:Static assets:Resources.VRC_Title_Header}" />
 
             <controls:SettingsToggle
+              IsVisible="{Binding ShowEyeTracking}"
               Title="{x:Static assets:Resources.VRC_UseNativeEyeTracking_Header}"
               Description="{x:Static assets:Resources.VRC_UseNativeEyeTracking_Description}"
               SettingToggled="{Binding UseNativeVrcEyeTracking, Mode=TwoWay}" />

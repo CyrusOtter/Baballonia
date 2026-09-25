@@ -330,12 +330,14 @@
           SettingToggled="{Binding UseGPU, Mode=TwoWay}" />
 
       <controls:SettingsToggle
+        IsVisible="{Binding ShowEyeTracking}"
         Title="{x:Static assets:Resources.Settings_DFR_Header}"
         Description="{x:Static assets:Resources.Settings_DFR_Description}"
         IconPath="GamesRegular"
         SettingToggled="{Binding UseDFR, Mode=TwoWay}" />
 
       <controls:SettingsToggle
+          IsVisible="{Binding ShowEyeTracking}"
           Title="{x:Static assets:Resources.Calibration_Eye_Expressions_Stabilize_Eyes_Header}"
           Description="{x:Static assets:Resources.Calibration_Eye_Expressions_Stabilize_Eyes_Description}"
           IconPath="EyeTrackingRegular"
@@ -367,6 +369,12 @@
         Description="{x:Static assets:Resources.Settings_Advanced_Description}"
         IconPath="SettingsRegular"
         SettingToggled="{Binding AdvancedOptions, Mode=TwoWay}" />
+
+      <controls:SettingsToggle
+        Title="{x:Static assets:Resources.Settings_HideEyeTracking_Header}"
+        Description="{x:Static assets:Resources.Settings_HideEyeTracking_Description}"
+        IconPath="EyeTrackingRegular"
+        SettingToggled="{Binding HideEyeTracking, Mode=TwoWay}" />
 
       <Expander
           HorizontalAlignment="Stretch"

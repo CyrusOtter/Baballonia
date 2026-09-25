@@ -80,6 +80,14 @@ public partial class AppSettingsViewModel : ViewModelBase
     private bool _advancedOptions;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ShowEyeTracking))]
+    [property: SavedSetting("AppSettings_HideEyeTracking", false)]
+    private bool _hideEyeTracking;
+
+    /// <summary>Inverse of <see cref="HideEyeTracking"/> for IsVisible bindings.</summary>
+    public bool ShowEyeTracking => !HideEyeTracking;
+
+    [ObservableProperty]
     [property: SavedSetting("AppSettings_StabilizeEyes", true)]
     private bool _stabilizeEyes;
 

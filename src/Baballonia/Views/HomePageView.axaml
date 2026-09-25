@@ -45,7 +45,7 @@
         </Button>
 
         <Button
-          IsVisible="{x:Static utils:Utils.IsSupportedDesktopOS}"
+          IsVisible="{Binding ShowEyeTrackingTools}"
           Padding="12,8"
           Click="EyeModelLoad"
           Grid.Column="3">
@@ -61,7 +61,7 @@
             Command="{Binding RequestVRCalibrationCommand}"
             CornerRadius="4"
             Grid.Column="5"
-            IsVisible="{x:Static utils:Utils.IsSupportedDesktopOS}"
+            IsVisible="{Binding ShowEyeTrackingTools}"
             Padding="12,8"
             x:Name="SplitCalibrationButton">
           <SplitButton.IsEnabled>
@@ -139,7 +139,7 @@
           HorizontalAlignment="Stretch"
           RowDefinitions="Auto"
           x:Name="CameraControlsGrid">
-          <Grid ColumnDefinitions="1*,1*" x:Name="EyesGrid">
+          <Grid ColumnDefinitions="1*,1*" IsVisible="{Binding ShowEyeTracking}" x:Name="EyesGrid">
               <!--  Left Eye Panel  -->
               <Grid
                   IsEnabled="{x:Static utils:Utils.IsSupportedDesktopOS}"

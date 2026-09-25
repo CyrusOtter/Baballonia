@@ -57,7 +57,7 @@
       </StackPanel>
 
       <!--  Eye Expressions Expander  -->
-      <Expander Margin="0,12,0,0" HorizontalAlignment="Stretch">
+      <Expander Margin="0,12,0,0" HorizontalAlignment="Stretch" IsVisible="{Binding ShowEyeTracking}">
         <Expander.Header>
           <TextBlock FontWeight="SemiBold" Text="{x:Static assets:Resources.Calibration_Eye_Expressions_Header}" />
         </Expander.Header>
