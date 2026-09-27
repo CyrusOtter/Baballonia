@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baballonia.CaptureBin.IO", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baballonia.LibV4L2Capture", "src\Baballonia.LibV4L2Capture\Baballonia.LibV4L2Capture.csproj", "{02E9F6A2-A443-491D-93FF-6F002F3C494F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baballonia.FcamStreamCapture", "src\Baballonia.FcamStreamCapture\Baballonia.FcamStreamCapture.csproj", "{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +128,10 @@ Global
 		{02E9F6A2-A443-491D-93FF-6F002F3C494F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E9F6A2-A443-491D-93FF-6F002F3C494F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E9F6A2-A443-491D-93FF-6F002F3C494F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +148,7 @@ Global
 		{4B08BDE8-099A-405F-AB71-094E8FC24AB1} = {82C6A0B4-5014-4BE4-9F52-7DC1989134E3}
 		{8D298C1C-774E-4BF0-A107-D5D3985C7A9B} = {82C6A0B4-5014-4BE4-9F52-7DC1989134E3}
 		{02E9F6A2-A443-491D-93FF-6F002F3C494F} = {82C6A0B4-5014-4BE4-9F52-7DC1989134E3}
+		{3F7A9C2E-6B41-4D8A-9E5C-1A2B3C4D5E6F} = {82C6A0B4-5014-4BE4-9F52-7DC1989134E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D6643ED-DDC1-4236-9471-024DCCFC81F6}

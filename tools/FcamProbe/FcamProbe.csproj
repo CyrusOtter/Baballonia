@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FcamProbe</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Baballonia.FcamStreamCapture\Baballonia.FcamStreamCapture.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.4" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.13.0.20260302" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
+    <PackageReference Include="Project-Babble.OpenCvSharp4.mini.runtime.ubuntu.22.04-x64" Version="4.11.0.1" Condition="$([MSBuild]::IsOSPlatform('Linux'))" />
+  </ItemGroup>
+
+</Project>
